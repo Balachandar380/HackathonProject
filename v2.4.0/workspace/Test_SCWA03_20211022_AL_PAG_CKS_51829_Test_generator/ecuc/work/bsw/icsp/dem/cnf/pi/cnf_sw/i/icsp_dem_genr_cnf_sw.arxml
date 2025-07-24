@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-0-3.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Continental_08</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>PowerSAR</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>ICSP</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>EcuModuleDefs</SHORT-NAME>
+                  <ELEMENTS>
+                    <ECUC-MODULE-CONFIGURATION-VALUES UUID="c9058491-76c4-43cf-aa2e-1d27530f4239">
+                      <SHORT-NAME>DemGenr</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-MODULE-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr</DEFINITION-REF>
+                      <CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="a8592729-f671-441a-ba63-9bf91f14f60f">
+                          <SHORT-NAME>Cores</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/NumberOfUsersPerSemaphore</DEFINITION-REF>
+                              <VALUE>65535</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE UUID="bd4e5dbb-4c56-45ba-9673-07c24e7d1e05">
+                              <SHORT-NAME>A0</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core/RelativePerformance</DEFINITION-REF>
+                                  <VALUE>100</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core/CycleEndFunction01</DEFINITION-REF>
+                                  <VALUE>Func_A0_CycObdEnd_01</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core/CycleEndFunction02</DEFINITION-REF>
+                                  <VALUE>Func_A0_CycObdEnd_02</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE UUID="b7a4676c-78ce-4583-8da7-193226daecfe">
+                              <SHORT-NAME>A1</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core/RelativePerformance</DEFINITION-REF>
+                                  <VALUE>100</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core/CycleEndFunction01</DEFINITION-REF>
+                                  <VALUE>Func_A1_CycObdEnd_01</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core/CycleEndFunction02</DEFINITION-REF>
+                                  <VALUE>Func_A1_CycObdEnd_02</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE UUID="e485a10d-4c07-4cd0-a28f-0079b5670be1">
+                              <SHORT-NAME>A2</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core/RelativePerformance</DEFINITION-REF>
+                                  <VALUE>100</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core/CycleEndFunction01</DEFINITION-REF>
+                                  <VALUE>Func_A2_CycObdEnd_01</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/Cores/Core/CycleEndFunction02</DEFINITION-REF>
+                                  <VALUE>Func_A2_CycObdEnd_02</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="bba9932a-9ea6-4b18-851a-4e21d87f693f">
+                          <SHORT-NAME>NvmSpc</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements_Rpg</DEFINITION-REF>
+                              <VALUE>ERRM_DCMNG_LV_RBM_GEN_DEN_MEM</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements_Rpg</DEFINITION-REF>
+                              <VALUE>ERRM_DCMNG_CTR_FUEL_ENG_CYC_OBD_LBYTE</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements_Rpg</DEFINITION-REF>
+                              <VALUE>ERRM_DCMNG_CTR_FUEL_ENG_CYC_OBD_HBYTE</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements_Rpg</DEFINITION-REF>
+                              <VALUE>ERRM_DCMNG_DIST_RBM_LBYTE</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements_Rpg</DEFINITION-REF>
+                              <VALUE>ERRM_DCMNG_DIST_RBM_HBYTE</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_STATIS_DIST_ACT_MIL_INTM</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_STATIS_DIST_DTC_CLR_INTM</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_STATIS_LV_MIL_REQ_TOT_PREV</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_STATIS_T_ACT_MIL_60</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_STATIS_T_DTC_CLR_60</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_DCMNGAI_DIST_INC_HBYTE</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_DCMNGAI_DIST_INC_LBYTE</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_LAMPMNGAI_CTR_WUP</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_LAMPMNGAI_STATE_EXT_MIL_REQ</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_LAMPMNGAI_LF_MIL_EXT_OBD_ECU_LBYTE</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_LAMPMNGAI_LF_MIL_EXT_OBD_ECU_HBYTE</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_RBMAI_DIST_IUMPR_CLR_HBYTE</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_RBMAI_DIST_IUMPR_CLR_LBYTE</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_RBMAI_DIST_IUMPR_CLR_INTM</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ICSP_DEM_CNF_MAN_CTR_KM_CAN_ENVD_HBYTEHWORD</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ICSP_DEM_CNF_MAN_CTR_KM_CAN_ENVD_LBYTEHWORD</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ICSP_DEM_CNF_MAN_CTR_KM_CAN_ENVD_HBYTELWORD</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ICSP_DEM_CNF_MAN_CTR_KM_CAN_ENVD_LBYTELWORD</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Continental_08/PowerSAR/ICSP/EcuModuleDefs/DemGenr/NvmSpc/Elements</DEFINITION-REF>
+                              <VALUE>ERRM_DUMMY_1</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </CONTAINERS>
+                    </ECUC-MODULE-CONFIGURATION-VALUES>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
