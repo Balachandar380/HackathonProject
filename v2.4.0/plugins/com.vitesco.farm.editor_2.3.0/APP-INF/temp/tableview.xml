@@ -1,0 +1,119 @@
+<tableview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\APP-INF\resources\tableview.xsd" columns="2" rows="1">
+<title>INHIBITION_MATRIX_VIEW</title>
+<caption>
+<p border="black" background="#eeeeee" width="0.54"></p><p>SCBO00_20140814_MLBevo_20l_CKS_10012.farm</p>
+<p border="black" background="#1010ff" width="0.54"></p><p>Mandatory Links</p>
+<p border="black" background="#71086b" width="0.54"></p><p>Optional Links</p>
+</caption>
+<info>
+<p>1.</p><p/>
+<p width="1.3">FARM File:</p><p>postbuild.farm</p>
+<p width="2.01">Imported From:</p><p>VWSC4_0U0_203_20141006_woec.fred</p>
+<p width="0.92">Status:</p><p>draft</p>
+<p width="2.13">Schema Version:</p><p>v1.4</p>
+<p width="1.25">Category:</p><p>postbuild</p>
+<p width="1.36">Last mod.:</p><p>2014-10-06</p>
+<p width="0.68">User:</p><p>Wellnhofer, Helmut, uid03205</p>
+<p/><p/>
+<p>2.</p><p/>
+<p width="1.3">FARM File:</p><p>SCBO00_20140814_MLBevo_20l_CKS_10012.farm</p>
+<p width="2.01">Imported From:</p><p>SCBO00_20140814_MLBevo_20l_CKS_10012.farm</p>
+<p width="0.92">Status:</p><p>draft</p>
+<p width="2.13">Schema Version:</p><p>v1.4</p>
+<p width="1.25">Category:</p><p>postbuild</p>
+<p width="1.36">Last mod.:</p><p>2014-08-14</p>
+<p width="0.68">User:</p><p>Wellnhofer, Helmut, uid03205</p>
+</info>
+<table id="columnHeaderTable">
+<columnHeader>
+<tr>
+<td>
+<cell text-anchor="middle" width="2" height="5.75"></cell>
+</td>
+<td>
+<cell text-orientation="vertical" width="1" height="5.75">FID_AC_bFailAcDem_VW</cell>
+</td>
+<td>
+<cell text-orientation="vertical" width="1" height="5.75" background="#eeeeee">FID_AC_bFailAcDem_VW</cell>
+</td>
+</tr>
+</columnHeader>
+<rowHeader/>
+<body>
+<tr>
+<td>
+<cell text-anchor="middle" width="2" height="0.5" background="#eeeeee">AGGR</cell>
+</td>
+<td>
+<cell text-anchor="middle" width="1" height="0.5">CUSF</cell></td><td>
+<cell text-anchor="middle" width="1" height="0.5">CUSF</cell></td></tr>
+<tr>
+<td>
+<cell text-anchor="middle" width="2" height="0.5" background="#eeeeee">Resp-1</cell>
+</td>
+<td>
+<cell text-anchor="middle" width="1" height="0.5"></cell></td><td>
+<cell text-anchor="middle"  width="1" height="0.5">MaPr</cell></td></tr>
+<tr>
+<td>
+<cell text-anchor="middle" width="2" height="0.5" background="#eeeeee">Resp-2</cell>
+</td>
+<td>
+<cell text-anchor="middle" width="1" height="0.5"></cell></td><td>
+<cell text-anchor="middle" width="1" height="0.5"></cell></td></tr>
+<tr>
+<td>
+<cell text-anchor="middle" width="2" height="0.5" background="#eeeeee">Maturity</cell>
+</td>
+<td>
+<cell image="file:/D:/ETS_Projects/FRED/1TT43-FARM_TOOLING/src/plugins/com.vitesco.farm.editor/APP-INF/icons/farm/maturity-level-1.png" text-anchor="middle"  width="1" height="0.5"></cell></td><td>
+<cell image="file:/D:/ETS_Projects/FRED/1TT43-FARM_TOOLING/src/plugins/com.vitesco.farm.editor/APP-INF/icons/farm/maturity-level-2.png" text-anchor="middle"  width="1" height="0.5"></cell></td></tr>
+<tr>
+<td>
+<cell text-anchor="middle" width="2" height="0.5" background="#eeeeee">Role</cell>
+</td>
+<td>
+<cell text-anchor="middle" width="1" height="0.5"></cell></td><td>
+<cell text-anchor="middle" width="1" height="0.5"></cell></td></tr>
+<tr>
+<td>
+<cell text-anchor="middle" width="2" height="0.5" background="#eeeeee">Inhibits OBD</cell>
+</td>
+<td>
+<cell text-anchor="middle" width="1" height="0.5"></cell></td><td>
+<cell text-anchor="middle" width="1" height="0.5"></cell></td></tr>
+</body>
+</table>
+<table id="bodyTable">
+<columnHeader/>
+<rowHeader/>
+<body>
+<tr><td><cell text-anchor="middle" width="1" height="0.5" background="#eeeeee"></cell></td><td><cell text-anchor="middle" width="1" height="0.5" background="#eeeeee"></cell></td></tr><tr><td><cell text-anchor="middle"  border-left="#33ff59" foreground="#ffffef" background="#71086b" width="1" height="0.5">ERR</cell></td><td><cell text-anchor="middle"  border-left="#33ff59" foreground="#ffffef" background="#71086b" width="1" height="0.5">ERR</cell></td></tr>
+</body>
+</table>
+<table id="rowHeaderTable">
+<columnHeader>
+<tr>
+<td><cell width="8.91" height="0.5">IO-Object</cell></td>
+<td><cell width="1" height="0.5" background="#eeeeee">AGGR</cell></td>
+</tr>
+</columnHeader>
+<rowHeader/>
+<body>
+<tr>
+<td>
+<cell text-anchor="middle" width="7.91" height="0.5" background="#eeeeee">Input objects</cell>
+</td>
+<td>
+<cell text-anchor="middle" width="2" height="0.5" background="#eeeeee">AGGR</cell>
+</td>
+</tr>
+<tr>
+<td>
+<cell text-anchor="start" width="7.91" height="0.5">ERR_COM_CCU_TOUT</cell>
+</td>
+<td>
+<cell text-anchor="start" width="11" height="0.5">INTC</cell></td></tr>
+</body>
+</table>
+</tableview>
