@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"   elementFormDefault="qualified">
+ 
+  <xs:element name="ObdErrmConfigurator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ErrmVersion"  type="xs:string" minOccurs="0" />
+        <xs:element name="FailureClass"  type="xs:string" minOccurs="0"  />
+        <xs:element name="ObdDtc"  type="xs:string" minOccurs="0"  />
+        <xs:element name="OBD-Relevance"  type="xs:string" minOccurs="0" />
+        <xs:element name="OBD-Relevance-Type"  type="xs:string" minOccurs="0" />
+        <xs:element name="DisableMask"  type="xs:string" minOccurs="0" />
+        <xs:element name="Initialization"  type="xs:string" minOccurs="0" />
+        <xs:element name="FailureClassTable"  type="xs:string" minOccurs="0"  />
+        <xs:element name="Scan-tool_Visibility"  type="xs:string" minOccurs="0"  />
+        <xs:element name="failure_Class-table_type"  type="xs:string" minOccurs="0"  />
+        <xs:element name="MIL_Activation"  type="xs:string" minOccurs="0"  />
+      </xs:sequence>
+
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>
