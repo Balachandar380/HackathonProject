@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+	<head>
+		<title>FARM Manual</title>
+		
+		<script type="text/javascript">
+		<!--
+			/* redirects the anchor to the content frame */
+			function jump_to_anchor()
+			{	
+				var fragment = window.location.hash;
+				window.frames[1].location.hash=fragment; 
+			}
+			
+			function getManualPage()
+			{
+				return window.frames[1].location.href; 
+			}
+			
+			function setManualPage(url)
+			{
+				var fragi = url.indexOf("#");
+				
+				if(fragi>=0)
+				{
+					var fragment = url.substring(fragi);
+					window.frames[1].location.hash=fragment; 
+				}
+			}
+		//-->
+		</script>
+	</head>
+	
+	<frameset cols="225,*" onload="jump_to_anchor()">
+		<frame src="toc.xml" name="frame_toc">
+		<frame src="manual.html" name="frame_content">
+		
+		<noframes>
+			<body>
+				<p><i>Sorry, no frames.</i></p>
+			</body>
+		</noframes>
+	</frameset>
+</html>
