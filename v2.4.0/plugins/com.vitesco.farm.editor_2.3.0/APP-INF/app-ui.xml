@@ -1,0 +1,1413 @@
+<?xml version="1.0"?>
+<!DOCTYPE application-ui SYSTEM "app-ui.dtd">
+
+<application-ui>
+    <title>FARM Editor</title>
+    <editor-mode>FULL</editor-mode>
+    <single-launch-on-port>11666</single-launch-on-port>
+    <!--
+     <look-and-feel-class-name>com.sun.java.swing.plaf.windows.WindowsLookAndFeel</look-and-feel-class-name>
+     -->
+    <!-- maps Swing action by their action command name to application commands -->
+    <!-- following action commands will be fired by the frame (if available) -->
+    <!-- (they cannot be disabled) -->
+    <!--
+         ApplicationUI.Frame.windowOpened
+         ApplicationUI.Frame.windowClosing
+         ApplicationUI.Frame.windowClosed
+         ApplicationUI.Frame.windowIconified
+         ApplicationUI.Frame.windowDeiconified
+         ApplicationUI.Frame.windowActivated
+         ApplicationUI.Frame.windowDeactivated
+     -->
+    <actions>
+        <action>
+            <action-command>ApplicationUI.Frame.windowClosing</action-command>
+            <command-class>com.vitesco.farm.command.ExitEditorCommand</command-class>
+        </action>
+
+        <action enabled="true">
+            <action-command>Exit</action-command>
+            <command-class>com.vitesco.farm.command.ExitEditorCommand</command-class>
+            <name>Exit</name>
+        </action>
+
+        <action enabled="true">
+            <action-command>CheckModified</action-command>
+            <command-class>com.vitesco.farm.command.CheckModifiedCommand</command-class>
+        </action>
+
+        <action enabled="true">
+            <action-command>ApplicationUI.Toolbar.floating</action-command>
+            <command-class>com.vitesco.farm.swing.command.DefaultToolbarFloatingCommand</command-class>
+            <name istring="ToolbarFloating.name"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>ShowDisclaimer</action-command>
+            <command-class>com.vitesco.farm.command.ShowDisclaimerCommand</command-class>
+            <name istring="ShowDisclaimer.name"/>
+            <small-icon>/icons/general/disclaimer.png</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>ResolveDupErr</action-command>
+            <command-class>com.vitesco.farm.command.ResolveDupErrCommand</command-class>
+            <name istring="resolveDupErr.name"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>ValidateLinkDescXML</action-command>
+            <command-class>com.vitesco.farm.command.ValidateLinkDescXMLCommand</command-class>
+            <name istring="ValidateLinkDescXML.name"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>About</action-command>
+            <command-class>com.vitesco.farm.command.AboutCommand</command-class>
+            <name istring="About.name"/>
+            <short-description istring="About.short-description"/>
+            <small-icon>/icons/farm/info.png</small-icon>
+            <accelerator istring="About.accelerator"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>HelpTopics</action-command>
+            <command-class>com.vitesco.farm.swing.command.DefaultHelpCommand</command-class>
+            <name istring="HelpTopics.name"/>
+            <small-icon>/icons/farm/question-mark.png</small-icon>
+            <accelerator istring="HelpTopics.accelerator"/>
+        </action>
+        
+        <action enabled="false">
+            <action-command>OBD</action-command>
+            <command-class>com.vitesco.farm.command.OBDCommand</command-class>
+            <name istring="OBD.name"/>
+            <short-description istring="OBD.short-description"/>
+            <long-description istring="OBD.long-description"/>
+            <small-icon>/icons/farm/obd-yes.png</small-icon>
+            <accelerator istring="OBD.accelerator"/>
+        </action>
+
+        <action>
+            <action-command>Find</action-command>
+            <command-class>com.vitesco.farm.command.FindInViewCommand</command-class>
+            <name istring="Find.name"/>
+            <short-description istring="Find.short-description"/>
+            <long-description istring="Find.long-description"/>
+            <small-icon>/icons/general/Find16.gif</small-icon>
+            <accelerator istring="Find.accelerator"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>Undo</action-command>
+            <command-class>com.vitesco.farm.command.UndoCommand</command-class>
+            <name istring="Undo.name"/>
+            <short-description istring="Undo.short-description"/>
+            <long-description istring="Undo.long-description"/>
+            <small-icon>/icons/general/Undo16.gif</small-icon>
+            <accelerator istring="Undo.accelerator"/>
+        </action>
+
+        <!-- base command for reading FARM data -->
+        <action enabled="true">
+            <action-command>ImportFarm</action-command>
+            <command-class>com.vitesco.farm.command.ImportFarmCommand</command-class>
+        </action>
+
+        <!-- base command for exporting FARM data -->
+        <action enabled="true">
+            <action-command>ExportFarm</action-command>
+            <command-class>com.vitesco.farm.command.ExportFarmCommand</command-class>
+        </action>
+
+        <action enabled="false">
+            <action-command>ImportFarmExchange</action-command>
+            <command-class>com.vitesco.farm.command.ImportFarmExchangeCommand</command-class>
+            <name istring="ImportFarmExchange.name"/>
+            <short-description istring="ImportFarmExchange.short-description"/>
+            <long-description istring="ImportFarmExchange.long-description"/>
+            <small-icon>/icons/general/Import16.gif</small-icon>
+            <accelerator istring="ImportFarmExchange.accelerator"/>
+            <mnemonic istring="ImportFarmExchange.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>ExportFarmExchange</action-command>
+            <command-class>com.vitesco.farm.command.ExportFarmExchangeCommand</command-class>
+            <name istring="ExportFarmExchange.name"/>
+            <short-description istring="ExportFarmExchange.short-description"/>
+            <long-description istring="ExportFarmExchange.long-description"/>
+            <small-icon>/icons/general/Export16.gif</small-icon>
+            <accelerator istring="ExportFarmExchange.accelerator"/>
+            <mnemonic istring="ExportFarmExchange.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>ExportFarmStatistics</action-command>
+            <command-class>com.vitesco.farm.command.ExportFarmStatisticsCommand</command-class>
+            <name istring="ExportFarmStatistics.name"/>
+            <short-description istring="ExportFarmStatistics.short-description"/>
+            <long-description istring="ExportFarmStatistics.long-description"/>
+            <small-icon>/icons/general/Export16.gif</small-icon>
+            <accelerator istring="ExportFarmStatistics.accelerator"/>
+            <mnemonic istring="ExportFarmStatistics.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>ExportFarmSymptom2SymptomMatrix</action-command>
+            <command-class>com.vitesco.farm.command.ExportFarmSymptom2SymptomMatrixCommand</command-class>
+            <name istring="ExportFarmSymptom2SymptomMatrix.name"/>
+            <short-description istring="ExportFarmSymptom2SymptomMatrix.short-description"/>
+            <long-description istring="ExportFarmSymptom2SymptomMatrix.long-description"/>
+            <small-icon>/icons/general/err2err.gif</small-icon>
+            <accelerator istring="ExportFarmSymptom2SymptomMatrix.accelerator"/>
+            <mnemonic istring="ExportFarmSymptom2SymptomMatrix.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>File.Open</action-command>
+            <command-class>com.vitesco.farm.command.FileOpenCommand</command-class>
+            <name istring="File.Open.name"/>
+            <short-description istring="File.Open.short-description"/>
+            <long-description istring="File.Open.long-description"/>
+            <small-icon>/icons/general/Open16.gif</small-icon>
+            <accelerator istring="File.Open.accelerator"/>
+            <mnemonic istring="File.Open.mnemonic"/>
+        </action>
+        
+         <action enabled="true">
+            <action-command>File.OpenDatabase</action-command>
+            <command-class>com.vitesco.farm.command.FileOpenDatabaseCommand</command-class>
+            <name istring="File.OpenDatabase.name"/>
+            <short-description istring="File.OpenDatabase.short-description"/>
+            <long-description istring="File.OpenDatabase.long-description"/>
+            <small-icon>/icons/general/fred_database.png</small-icon>
+            <accelerator istring="File.OpenDatabase.accelerator"/>
+            <mnemonic istring="File.OpenDatabase.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>File.Save</action-command>
+            <command-class>com.vitesco.farm.command.FileSaveCommand</command-class>
+            <name istring="File.Save.name"/>
+            <short-description istring="File.Save.short-description"/>
+            <long-description istring="File.Save.long-description"/>
+            <small-icon>/icons/farm/save.png</small-icon>
+            <accelerator istring="File.Save.accelerator"/>
+            <mnemonic istring="File.Save.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>File.SaveAs</action-command>
+            <command-class>com.vitesco.farm.command.FileSaveAsCommand</command-class>
+            <name istring="File.SaveAs.name"/>
+            <short-description istring="File.SaveAs.short-description"/>
+            <long-description istring="File.SaveAs.long-description"/>
+            <small-icon>/icons/farm/save-as.png</small-icon>
+            <accelerator istring="File.SaveAs.accelerator"/>
+            <mnemonic istring="File.SaveAs.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>File.ExportAs</action-command>
+            <command-class>com.vitesco.farm.command.FileExportAsCommand</command-class>
+            <name istring="File.ExportAs.name"/>
+            <short-description istring="File.ExportAs.short-description"/>
+            <long-description istring="File.ExportAs.long-description"/>
+            <small-icon>/icons/farm/save-as.png</small-icon>
+            <accelerator istring="File.ExportAs.accelerator"/>
+            <mnemonic istring="File.ExportAs.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>File.SaveSpreadsheetViewsAs</action-command>
+            <command-class>com.vitesco.farm.command.FileSaveSpreadsheetViewsAsCommand</command-class>
+            <name istring="File.SaveSpreadsheetViewsAs.name"/>
+            <short-description istring="File.SaveSpreadsheetViewsAs.short-description"/>
+            <long-description istring="File.SaveSpreadsheetViewsAs.long-description"/>
+            <small-icon>/icons/farm/save-as.png</small-icon>
+            <accelerator istring="File.SaveSpreadsheetViewsAs.accelerator"/>
+            <mnemonic istring="File.SaveSpreadsheetViewsAs.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>File.Open2ndFile</action-command>
+            <command-class>com.vitesco.farm.command.FileOpen2ndCommand</command-class>
+            <name istring="File.Open2ndFile.name"/>
+            <short-description istring="File.Open2ndFile.short-description"/>
+            <long-description istring="File.Open2ndFile.long-description"/>
+            <small-icon>/icons/farm/load-2-file.png</small-icon>
+            <accelerator istring="File.Open2ndFile.accelerator"/>
+            <mnemonic istring="File.Open2ndFile.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>File.CloseDataSource</action-command>
+            <command-class>com.vitesco.farm.command.Close1stDataSourceCommand</command-class>
+            <name istring="File.CloseDataSource.name"/>
+            <short-description istring="File.CloseDataSource.short-description"/>
+            <long-description istring="File.CloseDataSource.long-description"/>
+            <small-icon>/icons/farm/close-data-source.png</small-icon>
+            <accelerator istring="File.CloseDataSource.accelerator"/>
+            <mnemonic istring="File.CloseDataSource.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>File.Close2ndDataSource</action-command>
+            <command-class>com.vitesco.farm.command.Close2ndDataSourceCommand</command-class>
+            <name istring="File.Close2ndDataSource.name"/>
+            <short-description istring="File.Close2ndDataSource.short-description"/>
+            <long-description istring="File.Close2ndDataSource.long-description"/>
+            <small-icon>/icons/farm/close-2-data-source.png</small-icon>
+            <accelerator istring="File.Close2ndDataSource.accelerator"/>
+            <mnemonic istring="File.Close2ndDataSource.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>AddFid</action-command>
+            <command-class>com.vitesco.farm.command.AddFidCommand</command-class>
+            <name istring="AddFid.name"/>
+            <short-description istring="AddFid.short-description"/>
+            <long-description istring="AddFid.long-description"/>
+            <small-icon>/icons/farm/fid-add.png</small-icon>
+            <accelerator istring="AddFid.accelerator"/>
+            <mnemonic istring="AddFid.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>AddDemEvent</action-command>
+            <command-class>com.vitesco.farm.command.AddDemEventCommand</command-class>
+            <name istring="AddDemEvent.name"/>
+            <short-description istring="AddDemEvent.short-description"/>
+            <long-description istring="AddDemEvent.long-description"/>
+            <small-icon>/icons/farm/err-add.png</small-icon>
+            <accelerator istring="AddDemEvent.accelerator"/>
+            <mnemonic istring="AddDemEvent.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>AddAuxEvent</action-command>
+            <command-class>com.vitesco.farm.command.AddAuxEventCommand</command-class>
+            <name istring="AddAuxEvent.name"/>
+            <short-description istring="AddAuxEvent.short-description"/>
+            <long-description istring="AddAuxEvent.long-description"/>
+            <small-icon>/icons/farm/aux-add.png</small-icon>
+            <accelerator istring="AddAuxEvent.accelerator"/>
+            <mnemonic istring="AddAuxEvent.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>AddSummaryEvent</action-command>
+            <command-class>com.vitesco.farm.command.AddSummaryEventCommand</command-class>
+            <name istring="AddSummaryEvent.name"/>
+            <short-description istring="AddSummaryEvent.short-description"/>
+            <long-description istring="AddSummaryEvent.long-description"/>
+            <small-icon>/icons/farm/sum-add.png</small-icon>
+            <accelerator istring="AddSummaryEvent.accelerator"/>
+            <mnemonic istring="AddSummaryEvent.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>AddSummaryAuxiliaryEvent</action-command>
+            <command-class>com.vitesco.farm.command.AddSummaryAuxiliaryEventCommand</command-class>
+            <name istring="AddSummaryAuxiliaryEvent.name"/>
+            <short-description istring="AddSummaryAuxiliaryEvent.short-description"/>
+            <long-description istring="AddSummaryAuxiliaryEvent.long-description"/>
+            <small-icon>/icons/farm/sax-add.png</small-icon>
+            <accelerator istring="AddSummaryAuxiliaryEvent.accelerator"/>
+            <mnemonic istring="AddSummaryAuxiliaryEvent.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>EditInputOutputObject</action-command>
+            <command-class>com.vitesco.farm.command.EditInputOutputObjectCommand</command-class>
+            <name istring="EditInputOutputObject.name"/>
+            <short-description istring="EditInputOutputObject.short-description"/>
+            <long-description istring="EditInputOutputObject.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+            <accelerator istring="EditInputOutputObject.accelerator"/>
+            <mnemonic istring="EditInputOutputObject.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>ChangeInputOutputObjects</action-command>
+            <command-class>com.vitesco.farm.command.ChangeInputOutputObjectsCommand</command-class>
+            <name istring="ChangeInputOutputObjects.name"/>
+            <short-description istring="ChangeInputOutputObjects.short-description"/>
+            <long-description istring="ChangeInputOutputObjects.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+            <accelerator istring="ChangeInputOutputObjects.accelerator"/>
+            <mnemonic istring="ChangeInputOutputObjects.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>EditFid</action-command>
+            <command-class>com.vitesco.farm.command.EditFidCommand</command-class>
+            <name istring="EditFid.name"/>
+            <short-description istring="EditFid.short-description"/>
+            <long-description istring="EditFid.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>EditDemEvent</action-command>
+            <command-class>com.vitesco.farm.command.EditDemEventCommand</command-class>
+            <name istring="EditDemEvent.name"/>
+            <short-description istring="EditDemEvent.short-description"/>
+            <long-description istring="EditDemEvent.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>EditAuxEvent</action-command>
+            <command-class>com.vitesco.farm.command.EditAuxEventCommand</command-class>
+            <name istring="EditAuxEvent.name"/>
+            <short-description istring="EditAuxEvent.short-description"/>
+            <long-description istring="EditAuxEvent.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>EditSummaryEvent</action-command>
+            <command-class>com.vitesco.farm.command.EditSummaryEventCommand</command-class>
+            <name istring="EditSummaryEvent.name"/>
+            <short-description istring="EditSummaryEvent.short-description"/>
+            <long-description istring="EditSummaryEvent.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>EditSummaryAuxiliaryEvent</action-command>
+            <command-class>com.vitesco.farm.command.EditSummaryAuxiliaryEventCommand</command-class>
+            <name istring="EditSummaryAuxiliaryEvent.name"/>
+            <short-description istring="EditSummaryAuxiliaryEvent.short-description"/>
+            <long-description istring="EditSummaryAuxiliaryEvent.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>DeleteInputOutputObject</action-command>
+            <command-class>com.vitesco.farm.command.DeleteInputOutputObjectCommand</command-class>
+            <name istring="DeleteInputOutputObject.name"/>
+            <short-description istring="DeleteInputOutputObject.short-description"/>
+            <long-description istring="DeleteInputOutputObject.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+            <accelerator istring="DeleteInputOutputObject.accelerator"/>
+            <mnemonic istring="DeleteInputOutputObject.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>DeleteFid</action-command>
+            <command-class>com.vitesco.farm.command.DeleteFidCommand</command-class>
+            <name istring="DeleteFid.name"/>
+            <short-description istring="DeleteFid.short-description"/>
+            <long-description istring="DeleteFid.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>DeleteDemEvent</action-command>
+            <command-class>com.vitesco.farm.command.DeleteDemEventCommand</command-class>
+            <name istring="DeleteDemEvent.name"/>
+            <short-description istring="DeleteDemEvent.short-description"/>
+            <long-description istring="DeleteDemEvent.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>DeleteAuxEvent</action-command>
+            <command-class>com.vitesco.farm.command.DeleteAuxEventCommand</command-class>
+            <name istring="DeleteAuxEvent.name"/>
+            <short-description istring="DeleteAuxEvent.short-description"/>
+            <long-description istring="DeleteAuxEvent.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>DeleteSummaryEvent</action-command>
+            <command-class>com.vitesco.farm.command.DeleteSummaryEventCommand</command-class>
+            <name istring="DeleteSummaryEvent.name"/>
+            <short-description istring="DeleteSummaryEvent.short-description"/>
+            <long-description istring="DeleteSummaryEvent.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>DeleteSummaryAuxiliaryEvent</action-command>
+            <command-class>com.vitesco.farm.command.DeleteSummaryAuxiliaryEventCommand</command-class>
+            <name istring="DeleteSummaryAuxiliaryEvent.name"/>
+            <short-description istring="DeleteSummaryAuxiliaryEvent.short-description"/>
+            <long-description istring="DeleteSummaryAuxiliaryEvent.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>MoveInputOutputObject</action-command>
+            <command-class>com.vitesco.farm.command.MoveInputOutputObjectCommand</command-class>
+        </action>
+
+        <action enabled="false">
+            <action-command>AddToTableView</action-command>
+            <command-class>com.vitesco.farm.command.SetTableViewCommand</command-class>
+            <name istring="AddToTableView.name"/>
+            <short-description istring="AddToTableView.short-description"/>
+            <long-description istring="AddToTableView.long-description"/>
+            <small-icon>/icons/navigation/Forward16.gif</small-icon>
+            <accelerator istring="AddToTableView.accelerator"/>
+            <mnemonic istring="AddToTableView.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>RemoveFromTableView</action-command>
+            <command-class>com.vitesco.farm.command.SetTableViewCommand</command-class>
+            <name istring="RemoveFromTableView.name"/>
+            <short-description istring="RemoveFromTableView.short-description"/>
+            <long-description istring="RemoveFromTableView.long-description"/>
+            <small-icon>/icons/farm/remove-from-table-view.png</small-icon>
+            <accelerator istring="RemoveFromTableView.accelerator"/>
+            <mnemonic istring="RemoveFromTableView.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>RemoveAllFromTableView</action-command>
+            <command-class>com.vitesco.farm.command.RemoveAllFromTableViewCommand</command-class>
+            <name istring="RemoveAllFromTableView.name"/>
+            <short-description istring="RemoveAllFromTableView.short-description"/>
+            <long-description istring="RemoveAllFromTableView.long-description"/>
+            <small-icon>/icons/farm/empty-table-view.png</small-icon>
+            <accelerator istring="RemoveAllFromTableView.accelerator"/>
+            <mnemonic istring="RemoveAllFromTableView.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>FeedToOthers</action-command>
+            <command-class>com.vitesco.farm.command.FeedToOthersCommand</command-class>
+            <name istring="FeedToOthers.name"/>
+            <short-description istring="FeedToOthers.short-description"/>
+            <long-description istring="FeedToOthers.long-description"/>
+            <small-icon>/icons/farm/feed-to-others.png</small-icon>
+            <accelerator istring="FeedToOthers.accelerator"/>
+            <mnemonic istring="FeedToOthers.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>SetTableLayoutOrientation</action-command>
+            <command-class>com.vitesco.farm.command.SetTableLayoutOrientationCommand</command-class>
+        </action>
+
+        <action enabled="true">
+            <action-command>SetTableLayoutOutputOriented</action-command>
+            <command-class>com.vitesco.farm.command.SetTableLayoutOutputOrientedCommand</command-class>
+            <name istring="SetTableLayoutOutputOriented.name"/>
+            <short-description istring="SetTableLayoutOutputOriented.short-description"/>
+            <long-description istring="SetTableLayoutOutputOriented.long-description"/>
+            <small-icon layout-variable="FarmTableLayout.orientation.OUTPUT_ORIENTED.icon"/>
+            <accelerator istring="SetTableLayoutOutputOriented.accelerator"/>
+            <mnemonic istring="SetTableLayoutOutputOriented.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>SetTableLayoutInputOriented</action-command>
+            <command-class>com.vitesco.farm.command.SetTableLayoutInputOrientedCommand</command-class>
+            <name istring="SetTableLayoutInputOriented.name"/>
+            <short-description istring="SetTableLayoutInputOriented.short-description"/>
+            <long-description istring="SetTableLayoutInputOriented.long-description"/>
+            <small-icon layout-variable="FarmTableLayout.orientation.INPUT_ORIENTED.icon"/>
+            <accelerator istring="SetTableLayoutInputOriented.accelerator"/>
+            <mnemonic istring="SetTableLayoutInputOriented.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>SetTableLayoutDropMode</action-command>
+            <command-class>com.vitesco.farm.command.SetTableLayoutDropModeCommand</command-class>
+        </action>
+
+        <action enabled="true">
+            <action-command>SetTableLayoutSynchronousDropMode</action-command>
+            <command-class>com.vitesco.farm.command.SetTableLayoutSynchronousDropModeCommand</command-class>
+            <name istring="SetTableLayoutSynchronousDropMode.name"/>
+            <short-description istring="SetTableLayoutSynchronousDropMode.short-description"/>
+            <long-description istring="SetTableLayoutSynchronousDropMode.long-description"/>
+            <small-icon layout-variable="FarmTableLayout.dropMode.synchronous.icon"/>
+            <accelerator istring="SetTableLayoutSynchronousDropMode.accelerator"/>
+            <mnemonic istring="SetTableLayoutSynchronousDropMode.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>SetTableLayoutSynchronousCommonDropMode</action-command>
+            <command-class>com.vitesco.farm.command.SetTableLayoutSynchronousCommonDropModeCommand</command-class>
+            <name istring="SetTableLayoutSynchronousCommonDropMode.name"/>
+            <short-description istring="SetTableLayoutSynchronousCommonDropMode.short-description"/>
+            <long-description istring="SetTableLayoutSynchronousCommonDropMode.long-description"/>
+            <small-icon layout-variable="FarmTableLayout.dropMode.synchronous.common.icon"/>
+            <accelerator istring="SetTableLayoutSynchronousCommonDropMode.accelerator"/>
+            <mnemonic istring="SetTableLayoutSynchronousCommonDropMode.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>SetTableLayoutAsynchronousDropMode</action-command>
+            <command-class>com.vitesco.farm.command.SetTableLayoutAsynchronousDropModeCommand</command-class>
+            <name istring="SetTableLayoutAsynchronousDropMode.name"/>
+            <short-description istring="SetTableLayoutAsynchronousDropMode.short-description"/>
+            <long-description istring="SetTableLayoutAsynchronousDropMode.long-description"/>
+            <small-icon layout-variable="FarmTableLayout.dropMode.asynchronous.icon"/>
+            <accelerator istring="SetTableLayoutAsynchronousDropMode.accelerator"/>
+            <mnemonic istring="SetTableLayoutAsynchronousDropMode.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>ExportTableView</action-command>
+            <command-class>com.vitesco.farm.command.ExportTableViewCommand</command-class>
+        </action>
+
+        <action enabled="true">
+            <action-command>ShowTableOverview</action-command>
+            <command-class>com.vitesco.farm.command.ShowTableOverviewCommand</command-class>
+            <name istring="ShowTableOverview.name"/>
+            <short-description istring="ShowTableOverview.short-description"/>
+            <long-description istring="ShowTableOverview.long-description"/>
+            <small-icon>/icons/general/document.gif</small-icon>
+            <accelerator istring="ShowTableOverview.accelerator"/>
+            <mnemonic istring="ShowTableOverview.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>RememberCurrentView</action-command>
+            <command-class>com.vitesco.farm.command.RememberCurrentViewCommand</command-class>
+            <name istring="RememberCurrentView.name"/>
+            <short-description istring="RememberCurrentView.short-description"/>
+            <long-description istring="RememberCurrentView.long-description"/>
+            <small-icon>/icons/general/store-view.png</small-icon>
+            <accelerator istring="RememberCurrentView.accelerator"/>
+            <mnemonic istring="RememberCurrentView.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>RestoreView</action-command>
+            <command-class>com.vitesco.farm.command.RestoreViewCommand</command-class>
+            <name istring="RestoreView.name"/>
+            <short-description istring="RestoreView.short-description"/>
+            <long-description istring="RestoreView.long-description"/>
+            <small-icon>/icons/general/restore-view.png</small-icon>
+            <accelerator istring="RestoreView.accelerator"/>
+            <mnemonic istring="RestoreView.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>RefreshView</action-command>
+            <command-class>com.vitesco.farm.command.RefreshViewCommand</command-class>
+            <name istring="RefreshView.name"/>
+            <short-description istring="RefreshView.short-description"/>
+            <long-description istring="RefreshView.long-description"/>
+            <small-icon>/icons/general/refresh.png</small-icon>
+            <accelerator istring="RefreshView.accelerator"/>
+            <mnemonic istring="RefreshView.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>CreatePDF</action-command>
+            <command-class>com.vitesco.farm.command.CreatePDFCommand</command-class>
+            <name istring="CreatePDF.name"/>
+            <short-description istring="CreatePDF.short-description"/>
+            <long-description istring="CreatePDF.long-description"/>
+            <small-icon>/icons/external/PDF16.gif</small-icon>
+            <accelerator istring="CreatePDF.accelerator"/>
+            <mnemonic istring="CreatePDF.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>CreateExcel</action-command>
+            <command-class>com.vitesco.farm.command.CreateExcelCommand</command-class>
+            <name istring="CreateXLS.name"/>
+            <short-description istring="CreateXLS.short-description"/>
+            <long-description istring="CreateXLS.long-description"/>
+            <small-icon>/icons/external/Excel16.gif</small-icon>
+            <accelerator istring="CreateXLS.accelerator"/>
+            <mnemonic istring="CreateXLS.mnemonic"/>
+        </action>
+
+
+        <action enabled="false">
+            <action-command>ImportMapping</action-command>
+            <command-class>com.vitesco.farm.command.ImportMappingCommand</command-class>
+            <name istring="ImportMapping.name"/>
+            <short-description istring="ImportMapping.short-description"/>
+            <long-description istring="ImportMapping.long-description"/>
+            <small-icon>/icons/general/Import16.gif</small-icon>
+            <accelerator istring="ImportMapping.accelerator"/>
+            <mnemonic istring="ImportMapping.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>ExportToMSWord</action-command>
+            <command-class>com.vitesco.farm.command.ExportToMSWordCommand</command-class>
+            <name istring="ExportToMSWord.name"/>
+            <short-description istring="ExportToMSWord.short-description"/>
+            <long-description istring="ExportToMSWord.long-description"/>
+            <small-icon>/icons/external/msword.gif</small-icon>
+            <accelerator istring="ExportToMSWord.accelerator"/>
+            <mnemonic istring="ExportToMSWord.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>CreateHex</action-command>
+            <command-class>com.vitesco.farm.command.CreateHexCommand</command-class>
+            <name istring="CreateHex.name"/>
+            <short-description istring="CreateHex.short-description"/>
+            <long-description istring="CreateHex.long-description"/>
+            <small-icon>/icons/general/Export16.gif</small-icon>
+            <accelerator istring="CreateHex.accelerator"/>
+            <mnemonic istring="CreateHex.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>ImportFarmConfigurationShowPanel</action-command>
+            <command-class>com.vitesco.farm.command.ImportFarmConfigurationShowPanelCommand</command-class>
+            <name istring="ImportFarmConfigurationShowPanel.name"/>
+            <short-description istring="ImportFarmConfigurationShowPanel.short-description"/>
+            <long-description istring="ImportFarmConfigurationShowPanel.long-description"/>
+            <small-icon>/icons/general/Import16.gif</small-icon>
+            <accelerator istring="ImportFarmConfigurationShowPanel.accelerator"/>
+            <mnemonic istring="ImportFarmConfigurationShowPanel.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>ExportFarmConfigurationToBinary</action-command>
+            <command-class>com.vitesco.farm.command.ExportFarmConfigurationToBinaryCommand</command-class>
+        </action>
+
+        <action enabled="false">
+            <action-command>ImportFarmConfigurationFromS19</action-command>
+            <command-class>com.vitesco.farm.command.ImportFarmConfigurationFromS19Command</command-class>
+        </action>
+
+        <action enabled="false">
+            <action-command>ImportFarmConfigurationFromCalibrationCommand</action-command>
+            <command-class>com.vitesco.farm.command.ImportFarmConfigurationFromCalibrationCommand</command-class>
+        </action>
+
+        <action enabled="false">
+            <action-command>ImportOBDRelevance</action-command>
+            <command-class>com.vitesco.farm.command.ImportOBDRelevanceCommand</command-class>
+            <name istring="ImportOBDRelevance.name"/>
+            <short-description istring="ImportOBDRelevance.short-description"/>
+            <long-description istring="ImportOBDRelevance.long-description"/>
+            <small-icon>/icons/general/Import16.gif</small-icon>
+            <accelerator istring="ImportOBDRelevance.accelerator"/>
+            <mnemonic istring="ImportOBDRelevance.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>ImportFarmConfigurationShowCalibrationPanel</action-command>
+            <command-class>com.vitesco.farm.command.ImportFarmConfigurationShowCalibrationPanel</command-class>
+            <name istring="ImportFromCalibration.name"/>
+            <short-description istring="ImportFromCalibration.short-description"/>
+            <long-description istring="ImportFromCalibration.long-description"/>
+            <small-icon>/icons/general/Import16.gif</small-icon>
+            <accelerator istring="ImportFromCalibration.accelerator"/>
+            <mnemonic istring="ImportFromCalibration.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>UserLogin</action-command>
+            <command-class>com.vitesco.farm.command.UserLoginCommand</command-class>
+        </action>
+
+        <action enabled="true">
+            <action-command>AddChangeHistory</action-command>
+            <command-class>com.vitesco.farm.command.AddChangeHistoryCommand</command-class>
+        </action>
+
+        <action enabled="false">
+            <action-command>ViewAdminData</action-command>
+            <command-class>com.vitesco.farm.command.ViewAdminDataCommand</command-class>
+            <name istring="ViewAdminData.name"/>
+            <short-description istring="ViewAdminData.short-description"/>
+            <long-description istring="ViewAdminData.long-description"/>
+            <small-icon>/icons/general/History16.gif</small-icon>
+            <accelerator istring="ViewAdminData.accelerator"/>
+            <mnemonic istring="ViewAdminData.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>EditUser</action-command>
+            <command-class>com.vitesco.farm.command.EditUserCommand</command-class>
+            <name istring="EditUser.name"/>
+            <short-description istring="EditUser.short-description"/>
+            <long-description istring="EditUser.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>EditMasks</action-command>
+            <command-class>com.vitesco.farm.command.EditMasksCommand</command-class>
+            <name istring="EditMasks.name"/>
+            <short-description istring="EditMasks.short-description"/>
+            <long-description istring="EditMasks.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+            <accelerator istring="EditMasks.accelerator"/>
+            <mnemonic istring="EditMasks.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>EditPersons</action-command>
+            <command-class>com.vitesco.farm.command.EditPersonsCommand</command-class>
+            <name istring="EditPersons.name"/>
+            <short-description istring="EditPersons.short-description"/>
+            <long-description istring="EditPersons.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+            <accelerator istring="EditPersons.accelerator"/>
+            <mnemonic istring="EditPersons.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>EditRoles</action-command>
+            <command-class>com.vitesco.farm.command.EditRolesCommand</command-class>
+            <name istring="EditRoles.name"/>
+            <short-description istring="EditRoles.short-description"/>
+            <long-description istring="EditRoles.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+            <accelerator istring="EditRoles.accelerator"/>
+            <mnemonic istring="EditRoles.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>AddPerson</action-command>
+            <command-class>com.vitesco.farm.command.AddPersonCommand</command-class>
+            <name istring="AddPerson.name"/>
+            <short-description istring="AddPerson.short-description"/>
+            <long-description istring="AddPerson.long-description"/>
+            <small-icon>/icons/general/Add16.gif</small-icon>
+        </action>
+
+         <action enabled="true">
+            <action-command>AddRole</action-command>
+            <command-class>com.vitesco.farm.command.AddRoleCommand</command-class>
+            <name istring="AddRole.name"/>
+            <short-description istring="AddRole.short-description"/>
+            <long-description istring="AddRole.long-description"/>
+            <small-icon>/icons/general/Add16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>EditPerson</action-command>
+            <command-class>com.vitesco.farm.command.EditPersonCommand</command-class>
+            <name istring="EditPerson.name"/>
+            <short-description istring="EditPerson.short-description"/>
+            <long-description istring="EditPerson.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+         <action enabled="true">
+            <action-command>EditRole</action-command>
+            <command-class>com.vitesco.farm.command.EditRoleCommand</command-class>
+            <name istring="EditRole.name"/>
+            <short-description istring="EditRole.short-description"/>
+            <long-description istring="EditRole.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+	  <action enabled="true">
+            <action-command>ReplacePerson</action-command>
+            <command-class>com.vitesco.farm.command.ReplacePersonCommand</command-class>
+            <name istring="ReplacePerson.name"/>
+            <short-description istring="ReplacePerson.short-description"/>
+            <long-description istring="ReplacePerson.long-description"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>ReplaceRole</action-command>
+            <command-class>com.vitesco.farm.command.ReplaceRoleCommand</command-class>
+            <name istring="ReplaceRole.name"/>
+            <short-description istring="ReplaceRole.short-description"/>
+            <long-description istring="ReplaceRole.long-description"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>DeletePerson</action-command>
+            <command-class>com.vitesco.farm.command.DeletePersonCommand</command-class>
+            <name istring="DeletePerson.name"/>
+            <short-description istring="DeletePerson.short-description"/>
+            <long-description istring="DeletePerson.long-description"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>DeleteRole</action-command>
+            <command-class>com.vitesco.farm.command.DeleteRoleCommand</command-class>
+            <name istring="DeleteRole.name"/>
+            <short-description istring="DeleteRole.short-description"/>
+            <long-description istring="DeleteRole.long-description"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>EditDimSizeDefs</action-command>
+            <command-class>com.vitesco.farm.command.EditDimSizeDefsCommand</command-class>
+            <name istring="EditDimSizeDefs.name"/>
+            <short-description istring="EditDimSizeDefs.short-description"/>
+            <long-description istring="EditDimSizeDefs.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+            <accelerator istring="EditDimSizeDefs.accelerator"/>
+            <mnemonic istring="EditDimSizeDefs.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>AddDimSizeDef</action-command>
+            <command-class>com.vitesco.farm.command.AddDimSizeDefCommand</command-class>
+            <name istring="AddDimSizeDef.name"/>
+            <short-description istring="AddDimSizeDef.short-description"/>
+            <long-description istring="AddDimSizeDef.long-description"/>
+            <small-icon>/icons/general/Add16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>EditDimSizeDef</action-command>
+            <command-class>com.vitesco.farm.command.EditDimSizeDefCommand</command-class>
+            <name istring="EditDimSizeDef.name"/>
+            <short-description istring="EditDimSizeDef.short-description"/>
+            <long-description istring="EditDimSizeDef.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>DeleteDimSizeDef</action-command>
+            <command-class>com.vitesco.farm.command.DeleteDimSizeDefCommand</command-class>
+            <name istring="DeleteDimSizeDef.name"/>
+            <short-description istring="DeleteDimSizeDef.short-description"/>
+            <long-description istring="DeleteDimSizeDef.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>EditFimConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.EditFimConfigurationCommand</command-class>
+            <name istring="EditFimConfiguration.name"/>
+            <short-description istring="EditFimConfiguration.short-description"/>
+            <long-description istring="EditFimConfiguration.long-description"/>
+            <small-icon>/icons/farm/settings.png</small-icon>
+            <accelerator istring="EditFimConfiguration.accelerator"/>
+            <mnemonic istring="EditFimConfiguration.mnemonic"/>
+        </action>
+
+        <action enabled="true">
+            <action-command>AddMask</action-command>
+            <command-class>com.vitesco.farm.command.AddMaskCommand</command-class>
+            <name istring="AddMask.name"/>
+            <short-description istring="AddMask.short-description"/>
+            <long-description istring="AddMask.long-description"/>
+            <small-icon>/icons/general/Add16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>EditMask</action-command>
+            <command-class>com.vitesco.farm.command.EditMaskCommand</command-class>
+            <name istring="EditMask.name"/>
+            <short-description istring="EditMask.short-description"/>
+            <long-description istring="EditMask.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="true">
+            <action-command>DeleteMask</action-command>
+            <command-class>com.vitesco.farm.command.DeleteMaskCommand</command-class>
+            <name istring="DeleteMask.name"/>
+            <short-description istring="DeleteMask.short-description"/>
+            <long-description istring="DeleteMask.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>RunChecker</action-command>
+            <command-class>com.vitesco.farm.command.RunCheckerCommand</command-class>
+            <name istring="RunChecker.name"/>
+            <short-description istring="RunChecker.short-description"/>
+            <long-description istring="RunChecker.long-description"/>
+            <small-icon>/icons/general/Properties16.gif</small-icon>
+            <accelerator istring="RunChecker.accelerator"/>
+            <mnemonic istring="RunChecker.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>Diff</action-command>
+            <command-class>com.vitesco.farm.command.DiffCommand</command-class>
+            <name istring="Diff.name"/>
+            <short-description istring="Diff.short-description"/>
+            <long-description istring="Diff.long-description"/>
+            <small-icon>/icons/farm/diff.png</small-icon>
+            <accelerator istring="Diff.accelerator"/>
+            <mnemonic istring="Diff.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>AddFimInhibitionConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.AddFimInhibitionConfigurationCommand</command-class>
+            <name istring="AddFimInhibitionConfiguration.name"/>
+            <short-description istring="AddFimInhibitionConfiguration.short-description"/>
+            <long-description istring="AddFimInhibitionConfiguration.long-description"/>
+            <small-icon>/icons/general/Add16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>EditFimInhibitionConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.EditFimInhibitionConfigurationCommand</command-class>
+            <name istring="EditFimInhibitionConfiguration.name"/>
+            <short-description istring="EditFimInhibitionConfiguration.short-description"/>
+            <long-description istring="EditFimInhibitionConfiguration.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>DeleteFimInhibitionConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.DeleteFimInhibitionConfigurationCommand</command-class>
+            <name istring="DeleteFimInhibitionConfiguration.name"/>
+            <short-description istring="DeleteFimInhibitionConfiguration.short-description"/>
+            <long-description istring="DeleteFimInhibitionConfiguration.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+            <accelerator istring="DeleteFimInhibitionConfiguration.accelerator"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>AddSummaryEventConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.AddSummaryEventConfigurationCommand</command-class>
+            <name istring="AddSummaryEventConfiguration.name"/>
+            <short-description istring="AddSummaryEventConfiguration.short-description"/>
+            <long-description istring="AddSummaryEventConfiguration.long-description"/>
+            <small-icon>/icons/general/Add16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>EditSummaryEventConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.EditSummaryEventConfigurationCommand</command-class>
+            <name istring="EditSummaryEventConfiguration.name"/>
+            <short-description istring="EditSummaryEventConfiguration.short-description"/>
+            <long-description istring="EditSummaryEventConfiguration.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>DeleteSummaryEventConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.DeleteSummaryEventConfigurationCommand</command-class>
+            <name istring="DeleteSummaryEventConfiguration.name"/>
+            <short-description istring="DeleteSummaryEventConfiguration.short-description"/>
+            <long-description istring="DeleteSummaryEventConfiguration.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>AddSummaryAuxiliaryEventConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.AddSummaryAuxiliaryEventConfigurationCommand</command-class>
+            <name istring="AddSummaryAuxiliaryEventConfiguration.name"/>
+            <short-description istring="AddSummaryAuxiliaryEventConfiguration.short-description"/>
+            <long-description istring="AddSummaryAuxiliaryEventConfiguration.long-description"/>
+            <small-icon>/icons/general/Add16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>EditSummaryAuxiliaryEventConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.EditSummaryAuxiliaryEventConfigurationCommand</command-class>
+            <name istring="EditSummaryAuxiliaryEventConfiguration.name"/>
+            <short-description istring="EditSummaryAuxiliaryEventConfiguration.short-description"/>
+            <long-description istring="EditSummaryAuxiliaryEventConfiguration.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>DeleteSummaryAuxiliaryEventConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.DeleteSummaryAuxiliaryEventConfigurationCommand</command-class>
+            <name istring="DeleteSummaryAuxiliaryEventConfiguration.name"/>
+            <short-description istring="DeleteSummaryAuxiliaryEventConfiguration.short-description"/>
+            <long-description istring="DeleteSummaryAuxiliaryEventConfiguration.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>AddFidErrRelation</action-command>
+            <command-class>com.vitesco.farm.command.AddFidErrRelationCommand</command-class>
+            <name istring="AddFidErrRelation.name"/>
+            <short-description istring="AddFidErrRelation.short-description"/>
+            <long-description istring="AddFidErrRelation.long-description"/>
+            <small-icon>/icons/general/Add16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>EditFidErrRelation</action-command>
+            <command-class>com.vitesco.farm.command.EditFidErrRelationCommand</command-class>
+            <name istring="EditFidErrRelation.name"/>
+            <short-description istring="EditFidErrRelation.short-description"/>
+            <long-description istring="EditFidErrRelation.long-description"/>
+            <small-icon>/icons/general/Edit16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>DeleteFidErrRelation</action-command>
+            <command-class>com.vitesco.farm.command.DeleteFidErrRelationCommand</command-class>
+            <name istring="DeleteFidErrRelation.name"/>
+            <short-description istring="DeleteFidErrRelation.short-description"/>
+            <long-description istring="DeleteFidErrRelation.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>CreateFidErrRelations</action-command>
+            <command-class>com.vitesco.farm.command.CreateFidErrRelationsCommand</command-class>
+            <name istring="CreateFidErrRelations.name"/>
+            <short-description istring="CreateFidErrRelations.short-description"/>
+            <long-description istring="CreateFidErrRelations.long-description"/>
+            <small-icon>/icons/general/New16.gif</small-icon>
+        </action>
+
+        <action enabled="false">
+            <action-command>MergeFarmObject</action-command>
+            <command-class>com.vitesco.farm.command.MergeFarmObjectCommand</command-class>
+            <name istring="MergeFarmObject.name"/>
+            <short-description istring="MergeFarmObject.short-description"/>
+            <long-description istring="MergeFarmObject.long-description"/>
+            <small-icon>/icons/farm/merge.png</small-icon>
+            <accelerator istring="MergeFarmObject.accelerator"/>
+            <mnemonic istring="MergeFarmObject.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>CopyFimInhibitionConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.CopyFimInhibitionConfigurationCommand</command-class>
+            <name istring="CopyInputOutputLink.name"/>
+            <short-description istring="CopyInputOutputLink.short-description"/>
+            <long-description istring="CopyInputOutputLink.long-description"/>
+            <small-icon>/icons/general/Paste16.gif</small-icon>
+            <accelerator istring="CopyInputOutputLink.accelerator"/>
+            <mnemonic istring="CopyInputOutputLink.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>CopySummaryEventConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.CopySummaryEventConfigurationCommand</command-class>
+            <name istring="CopyInputOutputLink.name"/>
+            <short-description istring="CopyInputOutputLink.short-description"/>
+            <long-description istring="CopyInputOutputLink.long-description"/>
+            <small-icon>/icons/general/Paste16.gif</small-icon>
+            <accelerator istring="CopyInputOutputLink.accelerator"/>
+            <mnemonic istring="CopyInputOutputLink.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>CopySummaryAuxiliaryEventConfiguration</action-command>
+            <command-class>com.vitesco.farm.command.CopySummaryAuxiliaryEventConfigurationCommand</command-class>
+            <name istring="CopyInputOutputLink.name"/>
+            <short-description istring="CopyInputOutputLink.short-description"/>
+            <long-description istring="CopyInputOutputLink.long-description"/>
+            <small-icon>/icons/general/Paste16.gif</small-icon>
+            <accelerator istring="CopyInputOutputLink.accelerator"/>
+            <mnemonic istring="CopyInputOutputLink.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>CopyFidErrRelation</action-command>
+            <command-class>com.vitesco.farm.command.CopyFidErrRelationCommand</command-class>
+            <name istring="CopyInputOutputLink.name"/>
+            <short-description istring="CopyInputOutputLink.short-description"/>
+            <long-description istring="CopyInputOutputLink.long-description"/>
+            <small-icon>/icons/general/Paste16.gif</small-icon>
+            <accelerator istring="CopyInputOutputLink.accelerator"/>
+            <mnemonic istring="CopyInputOutputLink.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>FarmTableSheetCopy</action-command>
+            <command-class>com.vitesco.farm.ui.table.FarmTableSheetCopy</command-class>
+            <name istring="FarmTableSheet.copy.name"/>
+            <short-description istring="FarmTableSheet.copy.short-description"/>
+            <long-description istring="FarmTableSheet.copy.long-description"/>
+            <small-icon>/icons/general/Copy16.gif</small-icon>
+            <accelerator istring="FarmTableSheet.copy.accelerator"/>
+            <mnemonic istring="FarmTableSheet.copy.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>FarmTableSheetPaste</action-command>
+            <command-class>com.vitesco.farm.ui.table.FarmTableSheetPaste</command-class>
+            <name istring="FarmTableSheet.paste.name"/>
+            <short-description istring="FarmTableSheet.paste.short-description"/>
+            <long-description istring="FarmTableSheet.paste.long-description"/>
+            <small-icon>/icons/general/Paste16.gif</small-icon>
+            <accelerator istring="FarmTableSheet.paste.accelerator"/>
+            <mnemonic istring="FarmTableSheet.paste.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>FarmTableSheetCut</action-command>
+            <command-class>com.vitesco.farm.ui.table.FarmTableSheetCut</command-class>
+            <name istring="FarmTableSheet.cut.name"/>
+            <short-description istring="FarmTableSheet.cut.short-description"/>
+            <long-description istring="FarmTableSheet.cut.long-description"/>
+            <small-icon>/icons/general/Cut16.gif</small-icon>
+            <accelerator istring="FarmTableSheet.cut.accelerator"/>
+            <mnemonic istring="FarmTableSheet.cut.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>FarmTableSheetMerge</action-command>
+            <command-class>com.vitesco.farm.ui.table.FarmTableSheetMerge</command-class>
+            <name istring="FarmTableSheet.merge.name"/>
+            <short-description istring="FarmTableSheet.merge.short-description"/>
+            <long-description istring="FarmTableSheet.merge.long-description"/>
+            <small-icon>/icons/farm/merge.png</small-icon>
+            <accelerator istring="FarmTableSheet.merge.accelerator"/>
+            <mnemonic istring="FarmTableSheet.merge.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>MergeFarmObjects</action-command>
+            <command-class>com.vitesco.farm.command.MergeFarmObjectsCommand</command-class>
+            <name istring="MergeFarmObjects.name"/>
+            <short-description istring="MergeFarmObjects.short-description"/>
+            <long-description istring="MergeFarmObjects.long-description"/>
+            <small-icon>/icons/farm/merge.png</small-icon>
+            <accelerator istring="MergeFarmObjects.accelerator"/>
+            <mnemonic istring="MergeFarmObjects.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>MergeTableSheet</action-command>
+            <command-class>com.vitesco.farm.command.MergeTableSheetCommand</command-class>
+        </action>
+
+        <action enabled="false">
+            <action-command>MergeInhibitionLinksTableSheet</action-command>
+            <command-class>com.vitesco.farm.command.MergeInhibitionLinksTableSheetCommand</command-class>
+        </action>
+
+        <action enabled="false">
+            <action-command>MergeSummaryLinksTableSheet</action-command>
+            <command-class>com.vitesco.farm.command.MergeSummaryLinksTableSheetCommand</command-class>
+        </action>
+
+        <action enabled="false">
+            <action-command>MergeSummaryAuxiliaryLinksTableSheet</action-command>
+            <command-class>com.vitesco.farm.command.MergeSummaryAuxiliaryLinksTableSheetCommand</command-class>
+        </action>
+
+        <action enabled="false">
+            <action-command>MergeFidErrRelationsTableSheet</action-command>
+            <command-class>com.vitesco.farm.command.MergeFidErrRelationsTableSheetCommand</command-class>
+        </action>
+
+      <action enabled="true">
+            <action-command>ConfigurePreferences</action-command>
+            <command-class>com.vitesco.farm.command.ConfigurePreferencesCommand</command-class>
+            <name istring="ConfigurePreferences.name"/>
+            <short-description istring="ConfigurePreferences.short-description"/>
+            <long-description istring="ConfigurePreferences.long-description"/>
+            <accelerator istring="ConfigurePreferences.accelerator"/>
+            <mnemonic istring="ConfigurePreferences.mnemonic"/>
+      </action>
+
+			<action enabled="false">
+            <action-command>RelocateFIDRBM</action-command>
+            <command-class>com.vitesco.farm.command.RelocateFIDRBMCommand</command-class>
+            <name istring="RelocatFidRBMs.name"/>
+            <short-description istring="RelocatFidRBMs.short-description"/>
+            <long-description istring="RelocatFidRBMs.long-description"/>
+            <mnemonic istring="RelocatFidRBMs.mnemonic"/>
+			</action>
+
+        <action enabled="false">
+            <action-command>DeleteFarmObjects</action-command>
+            <command-class>com.vitesco.farm.command.DeleteFarmObjectsCommand</command-class>
+            <name istring="CleanFarmObjects.name"/>
+            <short-description istring="CleanFarmObjects.short-description"/>
+            <long-description istring="CleanFarmObjects.long-description"/>
+            <small-icon>/icons/farm/clean.png</small-icon>
+            <accelerator istring="CleanFarmObjects.accelerator"/>
+            <mnemonic istring="CleanFarmObjects.mnemonic"/>
+        </action>
+
+        <action enabled="false">
+            <action-command>DeleteLogItem</action-command>
+            <command-class>com.vitesco.farm.command.DeleteLogItemCommand</command-class>
+            <name istring="DeleteLogItem.name"/>
+            <short-description istring="DeleteLogItem.short-description"/>
+            <long-description istring="DeleteLogItem.long-description"/>
+            <small-icon>/icons/general/Delete16.gif</small-icon>
+            <accelerator istring="DeleteLogItem.accelerator"/>
+            <mnemonic istring="DeleteLogItem.mnemonic"/>
+        </action>
+        
+         <action enabled="true">
+            <action-command>ShowSchemaChangeMessageDialog</action-command>
+            <command-class>com.vitesco.farm.command.ShowSchemaChangeMessageDialogCommand</command-class>
+            <name istring="ShowSchemaChangeMessageDialog.name"/>
+            <short-description istring="ShowSchemaChangeMessageDialog.short-description"/>
+            <long-description istring="ShowSchemaChangeMessageDialog.long-description"/>
+            <small-icon>/icons/farm/info.png</small-icon>
+         </action>
+         
+          <action enabled="false">
+            <action-command>CreateFimDocumentation</action-command>
+            <command-class>com.vitesco.farm.command.CreateFimDocumentationCommand</command-class>
+            <name istring="CreateFimDocumentation.name"/>
+            <short-description istring="CreateFimDocumentation.short-description"/>
+            <long-description istring="CreateFimDocumentation.long-description"/>
+            <small-icon>/icons/general/Export16.gif</small-icon>
+            <accelerator istring="CreateFimDocumentation.accelerator"/>
+            <mnemonic istring="CreateFimDocumentation.mnemonic"/>
+        </action>
+
+        <!--==================================-->
+        <!--==       for debugging          ==-->
+        <!--==================================-->
+
+        <action enabled="true">
+            <action-command>ShowMemoryMonitor</action-command>
+            <command-class>com.vitesco.farm.command.ShowMemoryMonitorCommand</command-class>
+            <name>Show Memory Monitor</name>
+        </action>
+
+        <action enabled="true">
+            <action-command>ShowDocumentSource</action-command>
+            <command-class>com.vitesco.farm.command.ShowDocumentSourceCommand</command-class>
+            <name>Show Document Source</name>
+        </action>
+
+        <action enabled="true">
+            <action-command>DumpDocument</action-command>
+            <command-class>com.vitesco.farm.command.DumpDocumentCommand</command-class>
+            <name>Dump Document</name>
+        </action>
+
+        <action enabled="true">
+            <action-command>ShowUndoHistory</action-command>
+            <command-class>com.vitesco.farm.command.ShowUndoHistoryCommand</command-class>
+            <name>Show Undo History</name>
+        </action>
+
+        <action enabled="true">
+            <action-command>Show2ndDocumentSource</action-command>
+            <command-class>com.vitesco.farm.command.ShowDocumentSourceCommand</command-class>
+            <name>Show 2nd Document Source</name>
+        </action>
+
+        <action enabled="true">
+            <action-command>Dump2ndDocument</action-command>
+            <command-class>com.vitesco.farm.command.DumpDocumentCommand</command-class>
+            <name>Dump 2nd Document</name>
+        </action>
+
+        <action enabled="true">
+            <action-command>ShowCommandActions</action-command>
+            <command-class>com.vitesco.farm.swing.command.ShowCommandActionsPanelCommand</command-class>
+            <name>Show Command-Actions</name>
+        </action>
+
+        <action enabled="true">
+            <action-command>DumpDocumentStatistics</action-command>
+            <command-class>com.vitesco.farm.command.DumpDocumentStatisticsCommand</command-class>
+            <name>Dump Document Statistics</name>
+        </action>
+
+        <action enabled="true">
+            <action-command>Dump2ndDocumentStatistics</action-command>
+            <command-class>com.vitesco.farm.command.DumpDocumentStatisticsCommand</command-class>
+            <name>Dump 2nd Document Statistics</name>
+        </action>
+
+    </actions>
+
+    <menus>
+        <menu istring="Menu.File.title">
+            <menu action-command-ref="File.Open"/>
+            <menu action-command-ref="File.Open2ndFile"/>
+            <menu-separator/>
+            <menu action-command-ref="File.Save"/>
+            <menu action-command-ref="File.SaveAs"/>
+            <menu action-command-ref="File.ExportAs"/>
+            <menu-separator/>
+            <menu action-command-ref="File.SaveSpreadsheetViewsAs"/>
+            <menu-separator/>
+            <!--<menu action-command-ref="File.CloseDataSource"/>-->
+            <menu action-command-ref="File.Close2ndDataSource"/>
+            <menu-separator/>
+            <menu action-command-ref="File.OpenDatabase"/>
+            <menu-separator/>
+            <menu action-command-ref="RunChecker"/>
+            <menu action-command-ref="ViewAdminData"/>
+            <menu action-command-ref="Exit"/>
+        </menu>
+        <menu istring="Menu.Edit.title">
+            <menu action-command-ref="Find"/>
+            <menu-separator/>
+            <menu action-command-ref="Undo"/>
+            <menu-separator/>
+            <menu action-command-ref="EditFimConfiguration"/>
+            <menu action-command-ref="EditMasks"/>
+            <menu action-command-ref="EditDimSizeDefs"/>
+            <menu action-command-ref="EditPersons"/>
+            <menu action-command-ref="EditRoles"/>
+        </menu>
+        <menu istring="Menu.Manage.title">
+            <menu action-command-ref="MergeFarmObjects"/>
+            <menu action-command-ref="DeleteFarmObjects"/>
+            <menu action-command-ref="ConfigurePreferences"/>
+            <menu-separator/>
+			<menu action-command-ref="RelocateFIDRBM"/>
+
+        </menu>
+        <menu istring="Menu.Tools.title">
+            <menu action-command-ref="Diff"/>
+            <menu-separator/>
+            <menu action-command-ref="ImportOBDRelevance"/>
+            <menu-separator/>
+	    <menu action-command-ref="ImportFarmConfigurationShowCalibrationPanel"/>
+            <menu action-command-ref="ImportFarmConfigurationShowPanel"/>
+            <menu action-command-ref="CreateHex"/>
+            <menu-separator/>
+            <menu action-command-ref="ImportMapping"/>
+            <menu-separator/>
+            <menu action-command-ref="ImportFarmExchange"/>
+            <menu action-command-ref="ExportFarmExchange"/>
+            <menu action-command-ref="ExportFarmStatistics"/>
+            <menu action-command-ref="CreateFimDocumentation"/>
+            <menu-separator/>
+            <menu action-command-ref="ExportToMSWord"/>
+        </menu>
+        <menu istring="Menu.Help.title">
+            <menu action-command-ref="HelpTopics"/>
+            <menu action-command-ref="ShowSchemaChangeMessageDialog"/>
+            <menu title="Debug">
+                <menu action-command-ref="DumpDocument"/>
+                <menu action-command-ref="Dump2ndDocument"/>
+                <menu action-command-ref="DumpDocumentStatistics"/>
+                <menu action-command-ref="Dump2ndDocumentStatistics"/>
+                <menu action-command-ref="ShowDocumentSource"/>
+                <menu action-command-ref="Show2ndDocumentSource"/>
+                <menu action-command-ref="ShowUndoHistory"/>
+                <menu action-command-ref="ShowMemoryMonitor"/>
+                <menu action-command-ref="ShowCommandActions"/>
+            </menu>
+            <menu action-command-ref="About"/>
+        </menu>
+    </menus>
+
+    <toolbar>
+        <button action-command-ref="File.Open"/>
+        <button action-command-ref="File.Open2ndFile"/>
+        <button-separator/>
+        <button action-command-ref="File.Save"/>
+        <button-separator/>
+        <button action-command-ref="File.OpenDatabase"/>
+        <button-separator/>
+        <button action-command-ref="ExportToMSWord"/>
+        <button-separator/>
+        <button action-command-ref="MergeFarmObjects"/>
+        <button action-command-ref="DeleteFarmObjects"/>
+        <button-separator/>
+        <button action-command-ref="Find"/>
+        <button-separator/>
+        <button action-command-ref="Diff"/>
+        <button-separator/>
+        <button action-command-ref="Undo"/>
+        <button-separator/>
+        <button action-command-ref="ShowSchemaChangeMessageDialog"/>
+        <button-separator/>
+        <button action-command-ref="OBD"/>
+    </toolbar>
+</application-ui>
