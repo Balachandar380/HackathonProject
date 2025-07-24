@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><?mso-infoPathSolution solutionVersion="1.0.0.10" productVersion="15.0.0" PIVersion="1.0.0.0" href="file:///C:\Users\uidm3588\AppData\Local\Microsoft\InfoPath\Designer4\422dda2249744799\manifest.xsf" language="en-us" ?><?mso-application progid="InfoPath.Document" versionProgid="InfoPath.Document.4"?><ObdErrmConfigurator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2015-07-28T07:50:50" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+	<ErrmVersion>ICSP_DEM</ErrmVersion>
+	<FailureClass>Icsp_Dem_Class_IdxClass</FailureClass>
+	<ObdDtc>Icsp_Dem_Dtc_DtcObd</ObdDtc>
+	<OBD-Relevance>(Icsp_Dem_Class_StPrioDiagSrv[Icsp_Dem_Class_IdxClass_%]) &gt; 0</OBD-Relevance>
+	<OBD-Relevance-Type>^[NoObd|Obd].*</OBD-Relevance-Type>
+	<DisableMask>(Icsp_Dem_Deb_LfIniTyp_% &amp; 0x80)&gt;0</DisableMask>
+	<Initialization>Icsp_Dem_Deb_LfIniTyp</Initialization>
+	<FailureClassTable>Icsp_Dem_Class_StPrioDiagSrv</FailureClassTable>
+	<Scan-tool_Visibility>(Icsp_Dem_Class_StPrioDiagSrv[Icsp_Dem_Class_IdxClass_%]) &gt; 0</Scan-tool_Visibility>
+	<failure_Class-table_type>DEC</failure_Class-table_type>
+	<MIL_Activation>(Icsp_Dem_Class_StLamp_US[Icsp_Dem_Class_IdxClass_%]) &gt; 0</MIL_Activation>
+</ObdErrmConfigurator>
