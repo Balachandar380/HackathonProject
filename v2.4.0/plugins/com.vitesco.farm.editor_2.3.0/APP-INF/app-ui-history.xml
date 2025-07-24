@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE history [
+	<!ENTITY entries SYSTEM "app-ui-history.txt">
+]>
+<history>
+&entries;
+</history>
