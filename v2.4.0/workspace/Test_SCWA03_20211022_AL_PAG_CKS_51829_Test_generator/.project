@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Test_SCWA03_20211022_AL_PAG_CKS_51829_Test_generator</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.artop.aal.workspace.autosarnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>generator</name>
+			<type>2</type>
+			<location>d:/temp/Test_SCWA03_20211022_AL_PAG_CKS_51829_Test.fred_8683771675896572468/generator/</location>
+		</link>
+		<link>
+			<name>lib</name>
+			<type>2</type>
+			<location>d:/temp/Test_SCWA03_20211022_AL_PAG_CKS_51829_Test.fred_8683771675896572468/lib/</location>
+		</link>
+	</linkedResources>
+</projectDescription>
