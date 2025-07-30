@@ -1,1 +1,0 @@
-JRE\bin\javaw -Xmx600M -jar launch.jar -v -args

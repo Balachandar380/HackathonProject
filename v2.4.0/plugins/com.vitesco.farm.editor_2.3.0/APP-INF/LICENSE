@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<License><Licensor>Vitesco Technologies</Licensor><Product>FARM-Editor</Product><Product-Edition>FULL</Product-Edition><CodeSignature>0cc3a2d6c05f7505f6c7ca4c85de7545e759282f</CodeSignature><Licensee>Internal</Licensee><Issued>2025-02-18+05:30</Issued><Expiration>never</Expiration><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#dsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>Vs5NOvE+KWoCUadK/3+tX+FxlB8=</DigestValue></Reference></SignedInfo><SignatureValue>ZdLcmgev7/8HU+mVQQHiYcUKS55dt+kCJPznWr2HxGbcs4SHZAlBbQ==</SignatureValue><KeyInfo><KeyValue><DSAKeyValue><P>/X9TgR11EilS30qcLuzk5/YRt1I870QAwx4/gLZRJmlFXUAiUftZPY1Y+r/F9bow9subVWzXgTuA&#xd;
-HTRv8mZgt2uZUKWkn5/oBHsQIsJPu6nX/rfGG/g7V+fGqKYVDwT7g/bTxR7DAjVUE1oWkTL2dfOu&#xd;
-K2HXKu/yIgMZndFIAcc=</P><Q>l2BQjxUjC8yykrmCouuEC/BYHPU=</Q><G>9+GghdabPd7LvKtcNrhXuXmUr7v6OuqC+VdMCz0HgmdRWVeOutRZT+ZxBxCBgLRJFnEj6EwoFhO3&#xd;
-zwkyjMim4TwWeotUfI0o4KOuHiuzpnWRbqN/C/ohNWLx+2J6ASQ7zKTxvqhRkImog9/hWuWfBpKL&#xd;
-Zl6Ae1UlZAFMO/7PSSo=</G><Y>0rkw7w84BP4Hgspt1miQhrhmQeOEjaTTNg/e0Zz+oPapxr78Ov4AOsJ7aUBtqxk2ZDSa1jr8lmi6&#xd;
-2n7YDOAoN9hqrDCSHk6Fk+4X1Go1tfW6PXroNncsTZshGrH442qgscc+wTYOzE/045Z+YquRe/wn&#xd;
-uxr0z1KtcvzscQwU9pw=</Y></DSAKeyValue></KeyValue></KeyInfo></Signature></License>
